@@ -4,6 +4,8 @@ SOURCE_FILES =	ft_push_swap.c \
 				ft_split.c \
 				ft_moves.c \
 				ft_hardcoded.c \
+				ft_hardcoded2.c \
+				ft_main.c \
 
 NAME = push_swap
 

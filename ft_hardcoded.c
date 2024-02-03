@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:29:59 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/03 17:04:22 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:48:10 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,22 @@
 
 int	ft_found_min(t_num *num, int size)
 {
-	int		temp;
-	int		winner;
+	int	i;
+	int	temp;
+	int	winner;
+	int	value;
 
-	temp = num->first;
+	i = 1;
 	winner = 1;
-	if (temp > num->second)
+	temp = num->first;
+	value = num->first;
+	while (i < size)
 	{
-		temp = num->second;
-		winner = 2;
-	}
-	if (temp > num->third)
-	{
-		temp = num->third;
-		winner = 3;
-	}
-	if (temp > num->fourth)
-	{
-		temp = num->fourth;
-		winner = 4;
-	}
-	if (size == 5)
-	{
-		if (temp > num->fifth)
+		value = ((int *)num)[i++];
+		if (temp > value)
 		{
-			temp = num->fifth;
-			winner = 5;
+			temp = value;
+			winner = i;
 		}
 	}
 	return (winner);

@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:01:45 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/03 17:17:49 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:33:04 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	ft_lstprinter(t_list *stack);
 void	ft_clear_stack(t_list **stack);
 int		ft_lstordered(t_list **stack_a);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstadd_front(t_list **stack, t_list *new);
 
 void	ft_check_number(char *num);
 int		ft_duplicates(int number, t_list **stack_a);
@@ -56,6 +55,10 @@ void	ft_take_numbers(int argc, char **argv, t_list **stack_a);
 int		ft_lstsize(t_list *lst);
 int		ft_found_min(t_num *num, int size);
 void	ft_force(t_list **stack, t_list **stack_b, t_num *num, int size);
+
+void	ft_sethree(t_list **stack, t_num *num);
+void	ft_setfour(t_list **stack, t_num *num);
+void	ft_setfive(t_list **stack, t_num *num);
 
 void	ft_swap(t_list	**stack, char *str);
 void	ft_rotate(t_list **stack, char *str);
