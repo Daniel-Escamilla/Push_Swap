@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:00:12 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/01 17:35:24 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/03 16:56:13 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,17 +106,3 @@ char	**ft_split(const char *s, char c)
 	arr[a] = NULL;
 	return (arr);
 }
-
-// int main()
-// {
-// 	char **prueba;
-//     char *s = "as  l";
-//     char c = ' ';
-//     prueba = ft_split(s, ' ');
-// 	printf("%s\n", prueba[0]);
-// 	printf("%s\n", prueba[1]);
-	
-// 	free(prueba);
-
-//     return 0;
-// }

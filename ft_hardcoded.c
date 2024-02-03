@@ -6,40 +6,11 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:29:59 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/03 16:51:01 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:04:22 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_sethree(t_list **stack, t_num *num)
-{
-	t_list	*current;
-	
-	current = *stack;
-	num->first = current->content;
-	num->second = current->next->content;
-	num->third = current->next->next->content;
-	num->fourth = 0;
-	num->fifth = 0;
-}
-
-void	ft_setfour(t_list **stack, t_num *num)
-{
-	t_list	*current;
-
-	current = *stack;
-	ft_sethree(&current, num);
-	num->fourth = current->next->next->next->content;
-}
-void	ft_setfive(t_list **stack, t_num *num)
-{
-	t_list	*current;
-
-	current = *stack;
-	ft_setfour(&current, num);
-	num->fifth = current->next->next->next->next->content;
-}
 
 int	ft_found_min(t_num *num, int size)
 {
@@ -91,7 +62,7 @@ void	ft_three(t_list **stack_a, t_list **stack_b, t_num *num, int size)
 {
 	ft_sethree(stack_a, num);
 	if (num->first > num->second && num->first > num->third)
-	{	
+	{
 		ft_rotate(stack_a, "ra\n");
 		if (num->second > num->third)
 			ft_swap(stack_a, "sa\n");
@@ -157,6 +128,5 @@ void	ft_force(t_list **stack_a, t_list **stack_b, t_num *num, int size)
 		winner = ft_found_min(num, size);
 		ft_move(stack_a, stack_b, winner, size);
 		ft_three(stack_a, stack_b, num, size);
-	}	
+	}
 }
-

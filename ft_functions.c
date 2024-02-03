@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:32:11 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/03 14:36:43 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/03 16:57:46 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ long	ft_atol(const char *str)
 int	ft_lstordered(t_list **stack)
 {
 	t_list	*current;
-	
+
 	current = *stack;
 	while (current->next != NULL)
 	{
 		if (current->content > current->next->content)
-			return (0);	
+			return (0);
 		current = current->next;
 	}
 	ft_clear_stack(stack);
