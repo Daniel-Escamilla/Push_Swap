@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:44:01 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/02 17:53:44 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/03 16:30:15 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void	ft_lstprinter(t_list *stack)
 	{
 		while (stack != NULL)
 		{
-			printf("%d\n", stack->content);
+			printf("	%d\n", stack->content);
 			stack = stack->next;
 		}
 	}
@@ -118,28 +118,27 @@ int main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+	t_num	num;
 	int		size;
 
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc < 2)
 		ft_error();
+	num.first = 0;
+	num.second = 0;
+	num.third = 0;
 	ft_take_numbers(argc, argv, &stack_a);
 	if (ft_lstordered(&stack_a) == 1)
 		return (0);
 	size = ft_lstsize(stack_a);
-	ft_lstprinter(&(*stack_a));
-	if (size > 1 && size < 6)
-		ft_force(&stack_a, size);
+	if (size >= 2 && size <= 5)
+		ft_force(&stack_a, &stack_b, &num, size);
 	// else
 	// 	ft_radix(&stack_a);
-	// ft_rrotate(&stack_a, "rra\n");
-	ft_lstprinter(&(*stack_a));
+	ft_lstprinter(stack_a);
+	ft_lstprinter(stack_b);
 	ft_clear_stack(&stack_a);
 	ft_clear_stack(&stack_b);
 	return (0);
 }
-
-// RA	= 4 5 7 2 NULL -> 5 7 2 4
-
-// RRA	= 4 5 7 2 NULL -> 2 4 5 7

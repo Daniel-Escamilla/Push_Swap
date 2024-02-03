@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:01:45 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/02 17:12:55 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/03 16:06:22 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,19 @@
 # include <string.h>
 # include <stdlib.h>
 
+typedef struct s_num
+{
+	int				first;
+	int				second;
+	int				third;
+	int				fourth;
+	int				fifth;
+}					t_num;
+
 typedef struct s_list
 {
 	int 			content;
-	struct s_list	*next;
+	struct	s_list	*next;
 }					t_list;
 
 void	ft_error(void);
@@ -43,8 +52,10 @@ int		ft_duplicates(int number, t_list **stack_a);
 void	ft_new_node_number(int number, t_list **stack_a);
 void	ft_take_numbers(int argc, char **argv, t_list **stack_a);
 
-int	ft_lstsize(t_list *lst);
-void	ft_force(t_list **stack, int size);
+int		ft_lstsize(t_list *lst);
+void	ft_force(t_list **stack, t_list **stack_b, t_num *num, int size);
+int		ft_found_min(t_num *num, int size);
+
 
 void	ft_swap(t_list	**stack, char *str);
 void	ft_rotate(t_list **stack,  char *str);
