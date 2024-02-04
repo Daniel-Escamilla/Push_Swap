@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:01:45 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/04 12:49:12 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/04 12:53:40 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ t_list	*ft_lstnew(int content);
 void	ft_lstprinter(t_list *stack);
 void	ft_clear_stack(t_list **stack);
 int		ft_lstordered(t_list **stack_a);
+void	ft_lstprinter_index(t_list *stack);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 
 void	ft_check_number(char *num);

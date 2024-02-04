@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 13:55:24 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/03 17:05:21 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/04 16:45:03 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,15 @@ void	ft_push(t_list **stack_a, t_list **stack_b, char *str)
 void	ft_rotate(t_list **stack, char *str)
 {
 	t_list	*current;
-	int		temp;
+	t_list	*temp;
 
 	current = *stack;
-	if (current == NULL)
-		return ;
-	temp = current->content;
-	while (current->next != NULL)
-	{
-		current->content = current->next->content;
-		current = current->next;
-	}
-	current->content = temp;
+	(*stack) = (*stack)->next;
+	current->next = NULL;
+	temp = *stack;
+	while (temp->next != NULL)
+		temp = temp->next;
+	temp->next = current;
 	write(1, str, 3);
 }
 

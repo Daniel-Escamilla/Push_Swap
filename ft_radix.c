@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 17:51:56 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/04 12:52:12 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/04 16:47:17 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,46 @@ void	ft_index_all(t_list **stack)
 		temp = temp->next;
 	}
 }
+int	ft_number_bits(int size)
+{
+	int	i;
+	
+	i = 0;
+	while (size > 0)
+	{
+		size /= 2;
+		i++;
+	}
+	return (i);
+}
+
+void	ft_bits(t_list **stack_a, t_list **stack_b, int size)
+{
+	int	bits;
+	int	i;
+	int	j;
+	
+	i = 0;
+	bits = ft_number_bits(size);
+	while (i < bits)
+	{
+		j = 0;
+		while (j < size)
+		{
+			if (((*stack_a)->index >> i & 1) == 1)
+				ft_rotate(stack_a, "ra\n");
+			else
+				ft_push(stack_a, stack_b, "pb\n");
+			j++;
+		}
+		while (ft_lstsize(*stack_b) != 0)
+			ft_push(stack_b, stack_a, "pa\n");
+		i++;
+	}
+}
 
 void	ft_radix(t_list **stack_a, t_list **stack_b, int size)
 {
-	ft_lstprinter(*stack_a);
-	ft_lstprinter(*stack_b);
-	printf("SIZE	=	%d\n", size);
 	ft_index_all(stack_a);
-	printf("1º = %d\n", (*stack_a)->index);
-	printf("2º = %d\n", (*stack_a)->next->index);
-	printf("3º = %d\n", (*stack_a)->next->next->index);
-	printf("4º = %d\n", (*stack_a)->next->next->next->index);
-	printf("5º = %d\n", (*stack_a)->next->next->next->next->index);
-	printf("6º = %d\n", (*stack_a)->next->next->next->next->next->index);
+	ft_bits(stack_a, stack_b, size);
 }
