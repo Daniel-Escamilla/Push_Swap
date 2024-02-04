@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 17:51:56 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/04 16:47:17 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/04 17:26:44 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,11 @@ void	ft_index_all(t_list **stack)
 		temp = temp->next;
 	}
 }
+
 int	ft_number_bits(int size)
 {
 	int	i;
-	
+
 	i = 0;
 	while (size > 0)
 	{
@@ -53,7 +54,7 @@ void	ft_bits(t_list **stack_a, t_list **stack_b, int size)
 	int	bits;
 	int	i;
 	int	j;
-	
+
 	i = 0;
 	bits = ft_number_bits(size);
 	while (i < bits)

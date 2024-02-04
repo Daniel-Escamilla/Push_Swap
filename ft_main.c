@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 17:06:08 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/04 16:46:30 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/04 17:28:09 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,9 @@
 
 void	ft_error(void)
 {
-	write (1, "Error\n", 7);
+	write (1, "Error\n", 6);
 	exit(1);
 }
-
-// void	ft_lstprinter(t_list *stack)
-// {
-// 	if (stack != NULL)
-// 	{
-// 		while (stack != NULL)
-// 		{
-// 			printf("NODE	= %d\n", stack->content);
-// 			stack = stack->next;
-// 		}
-// 	}
-// }
-
-// void	ft_lstprinter_index(t_list *stack)
-// {
-// 	if (stack != NULL)
-// 	{
-// 		while (stack != NULL)
-// 		{
-// 			printf("INDEX =	%d\n", stack->index);
-// 			stack = stack->next;
-// 		}
-// 	}
-// }
 
 int	main(int argc, char **argv)
 {
@@ -52,10 +28,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc < 2)
-		ft_error();
-	num.first = 0;
-	num.second = 0;
-	num.third = 0;
+		return (0);
 	ft_take_numbers(argc, argv, &stack_a);
 	if (ft_lstordered(&stack_a) == 1)
 		return (0);

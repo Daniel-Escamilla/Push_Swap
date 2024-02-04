@@ -2,7 +2,7 @@ SOURCE_FILES =	ft_main.c \
 				ft_radix.c \
 				ft_split.c \
 				ft_moves.c \
-				push_swap.c \
+				ft_push_swap.c \
 				ft_functions.c \
 				ft_hardcoded.c \
 				ft_functions2.c \
