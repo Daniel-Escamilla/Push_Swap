@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 12:50:13 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/03 16:59:08 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/03 18:19:25 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ void	ft_clear_stack(t_list **stack)
 	*stack = NULL;
 }
 
-void	ft_lstadd_front(t_list **stack, t_list *new)
+int	ft_lstsize(t_list *lst)
 {
-	new->next = *stack;
-	*stack = new;
-}
+	int	count;
 
-void	ft_lstdelone(t_list *lst)
-{
-	if (lst != NULL)
-		free(lst);
+	count = 0;
+	while (lst != NULL)
+	{
+		count++;
+		lst = lst->next;
+	}
+	return (count);
 }

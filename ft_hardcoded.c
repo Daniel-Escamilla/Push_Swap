@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:29:59 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/03 17:48:10 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/03 18:21:11 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,6 @@ int	ft_found_min(t_num *num, int size)
 		}
 	}
 	return (winner);
-}
-
-int	ft_lstsize(t_list *lst)
-{
-	int	count;
-
-	count = 0;
-	while (lst != NULL)
-	{
-		count++;
-		lst = lst->next;
-	}
-	return (count);
 }
 
 void	ft_three(t_list **stack_a, t_list **stack_b, t_num *num, int size)

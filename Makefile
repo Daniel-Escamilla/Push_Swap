@@ -1,11 +1,12 @@
-SOURCE_FILES =	ft_push_swap.c \
-				ft_functions.c \
-				ft_functions2.c \
+SOURCE_FILES =	ft_main.c \
+				ft_radix.c \
 				ft_split.c \
 				ft_moves.c \
+				ft_push_swap.c \
+				ft_functions.c \
 				ft_hardcoded.c \
+				ft_functions2.c \
 				ft_hardcoded2.c \
-				ft_main.c \
 
 NAME = push_swap
 

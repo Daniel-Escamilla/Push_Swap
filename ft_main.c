@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 17:06:08 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/03 17:15:31 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/04 12:48:06 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,9 @@ int	main(int argc, char **argv)
 	if (ft_lstordered(&stack_a) == 1)
 		return (0);
 	size = ft_lstsize(stack_a);
-	if (size >= 2 && size <= 5)
+	if (size >= 6)
+		ft_radix(&stack_a, &stack_b, size);
+	else
 		ft_force(&stack_a, &stack_b, &num, size);
 	ft_lstprinter(stack_a);
 	ft_lstprinter(stack_b);
@@ -56,6 +58,3 @@ int	main(int argc, char **argv)
 	ft_clear_stack(&stack_b);
 	return (0);
 }
-
-	// else
-	// 	ft_radix(&stack_a);

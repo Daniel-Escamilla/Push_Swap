@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:44:01 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/03 17:14:02 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/03 18:33:22 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void	ft_take_numbers(int argc, char **argv, t_list **stack_a)
 	int		i;
 	int		j;
 	char	**arr;
+	long	number;
 
 	i = 1;
 	while (i != argc)
@@ -87,7 +88,10 @@ void	ft_take_numbers(int argc, char **argv, t_list **stack_a)
 		while (arr[j] != NULL)
 		{
 			ft_check_number(arr[j]);
-			ft_new_node_number(ft_atol(arr[j]), stack_a);
+			number = ft_atol(arr[j]);
+			if (number == (long) INT_MAX + 1)
+				ft_error();
+			ft_new_node_number(number, stack_a);
 			free(arr[j]);
 			j++;
 		}

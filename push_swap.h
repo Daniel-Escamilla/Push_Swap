@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:01:45 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/03 17:33:04 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/04 12:49:12 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ long	ft_atol(const char *str);
 char	**ft_split(const char *s, char c);
 
 t_list	*ft_lstnew(int content);
-void	ft_lstdelone(t_list *lst);
 void	ft_lstprinter(t_list *stack);
 void	ft_clear_stack(t_list **stack);
 int		ft_lstordered(t_list **stack_a);
@@ -64,5 +63,7 @@ void	ft_swap(t_list	**stack, char *str);
 void	ft_rotate(t_list **stack, char *str);
 void	ft_rrotate(t_list **stack, char *str);
 void	ft_push(t_list **stack1, t_list **stack2, char *str);
+
+void	ft_radix(t_list **stack_a, t_list **stack_b, int size);
 
 #endif

@@ -5,69 +5,52 @@ ORDENADOS 	= 2 < 3 < 4
 CASOS
 
 		2 < 3 < 4													{0 MV}
-		
-		4 > 3 > 2 	[RA, SA]	—>		3 > 2 < 4	—>	2 < 3 < 4	{2 MV}
-		4 > 2 < 3 	[RA]		—>		2 < 3 < 4					{1 MV}
-
 		2 < 4 > 3 	[RRA, SA]	—>		3 > 2 < 4	—>	2 < 3 < 4	{2 MV}
-		3 < 4 > 2 	[RRA]		—>		2 < 3 < 4					{1 MV}
-
+		4 > 3 > 2 	[RA, SA]	—>		3 > 2 < 4	—>	2 < 3 < 4	{2 MV}
 		3 > 2 < 4 	[SA]		—>		2 < 3 < 4					{1 MV}
+		4 > 2 < 3 	[RA]		—>		2 < 3 < 4					{1 MV}
+		3 < 4 > 2 	[RRA]		—>		2 < 3 < 4					{1 MV}
 
 
 4 Números
 ORDENADOS	= 1 < 2 < 3 < 4
 CASOS
 		
-	1 < 2 < 3 < 4	[]						{0 MV}
-	1 < 2 < 4 > 3	[PB, RRA, SA, PA]		{4 MV}
-    1 < 4 > 3 > 2	[PB, RA, SA, PA]		{4 MV}
-	1 < 3 > 2 < 4	[PB, SA, PA]			{3 MV}
-	1 < 3 < 4 > 2	[PB, RRA, PA]			{3 MV}
-	1 < 4 > 2 < 3	[PB, RA, PA]			{3 MV}
-	2 > 1 < 3 < 4	[SA]					{1 MV}
-	2 > 1 < 4 > 3	[SA, PB, RRA, SA, PA]	{5 MV}
-	2 < 3 > 1 < 4	[RA, SA, RRA, SA]		{4 MV}
-	2 < 3 < 4 > 1	[RRA]					{1 MV}
-	2 < 4 > 1 < 3	[PB, RRA, PA, RRA]		{4 MV}
-	2 < 4 > 3 > 1	[PB, SA, PA, RRA]		{4 MV}
-	3 > 1 < 2 < 4	[RRA, SA, RRA, RRA]		{4 MV}
-	3 > 1 < 4 > 2	[SA, RRA, SA]			{3 MV}
-	3 > 2 > 1 < 4	[RRA, SA, RRA, RRA, SA]	{5 MV}
-	3 > 2 < 4 > 1	[SA, RRA]				{2 MV}
-	3 < 4 > 1 < 2	[RRA, RRA]				{2 MV}
-	3 < 4 > 2 > 1	[RRA, RRA, SA]			{3 MV}
-	4 > 1 < 2 < 3	[RA]					{1 MV}
-	4 > 1 < 3 > 2	[RRA, PB, SA, PA]		{4 MV}
-	4 > 2 > 1 < 3	[RRA, SA]				{2 MV}
-	4 > 2 < 3 > 1	[PB, RRA, PA, RA]		{4 MV}
-	4 > 3 > 1 < 2	[RAA, RRA]				{2 MV}
-	4 > 3 > 2 > 1	[SA, RRA, RRA, SA]		{4 MV}
+	1 < 2 < 3 < 4													{0 MV}
+	1 < 2 < 4 > 3	[PB, RRA, SA, PA]
+    1 < 4 > 3 > 2	[PB, RA, SA, PA]
+	1 < 3 > 2 < 4	[PB, SA, PA]
+	1 < 3 < 4 > 2	[PB, RRA, PA]
+	1 < 4 > 2 < 3	[PB, RA, PA]
+	2 > 1 < 3 < 4	[SA]
+	2 > 1 < 4 > 3	[SA, PB, RRA, SA, PA]
+	2 < 3 > 1 < 4	[RA, SA, RRA, SA]
+	2 < 3 < 4 > 1	[RRA]
+	2 < 4 > 1 < 3	[PB, RRA, PA, RRA]
+	2 < 4 > 3 > 1	[PB, SA, PA, RRA]
+	3 > 1 < 2 < 4	[RRA, SA, RRA, RRA]
+	3 > 1 < 4 > 2	[SA, RRA, SA]
+	3 > 2 > 1 < 4	[RRA, SA, RRA, RRA, SA]
+	3 > 2 < 4 > 1	[SA, RRA]
+	3 < 4 > 1 < 2	[RRA, RRA]
+	3 < 4 > 2 > 1	[RRA, RRA, SA]
+	4 > 1 < 2 < 3	[RA]
+	4 > 1 < 3 > 2	[RRA, PB, SA, PA]
+	4 > 2 > 1 < 3	[RRA, SA]
+	4 > 2 < 3 > 1	[PB, RRA, PA, RA]
+	4 > 3 > 1 < 2	[RAA, RRA]
+	4 > 3 > 2 > 1	[SA, RRA, RRA, SA]
 
-100+ Números
 
-	2	
-	1	
-3
-4
-5
 
-	4
+5 Números
+
+
 	3
-1       rra 2 
-2       ra 2
-5
-coste = 4 
 
 
-1	4
-2
-3
-coste max (rotaciones max)= 4 - 1
+6 Números
 
-2	4
-3
-1
-rotaciones exac = 
 
-a	B
+	3
+
