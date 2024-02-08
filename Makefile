@@ -29,16 +29,6 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-git:
-	git add .
-	git status
-	@read -p "¿Continuar? [y/n]: " answer; \
-	if [ "$$answer" = "y" ]; then \
-		read -p "Mensaje para el commit: " message; \
-		git commit -m "$$message"; \
-		git push; \
-	fi
-
 re: clean all
 
 .PHONY: re fclean clean all

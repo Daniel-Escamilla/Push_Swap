@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 17:06:08 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/04 17:28:09 by descamil         ###   ########.fr       */
+/*   Updated: 2024/02/04 17:36:59 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(void)
 {
-	write (1, "Error\n", 6);
+	write (2, "Error\n", 6);
 	exit(1);
 }
 
