@@ -13,22 +13,24 @@ NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g3
 
-OBJECTS = $(SOURCE_FILES:.c=.o)
+OBJECTS = $(addprefix push_swap_objects/, $(SOURCE_FILES:.c=.o))
 
 all: $(NAME)
 
-%.o: %.c
+push_swap_objects/%.o: %.c
+	@mkdir -p push_swap_objects
 	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo $(CC) $(CFLAGS) $<
 
 $(NAME) : $(OBJECTS)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJECTS)
 
 clean:
-	rm -rf $(OBJECTS)
+	@rm -rf push_swap_objects
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
-re: clean all
+re: fclean all
 
 .PHONY: re fclean clean all
