@@ -6,13 +6,13 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 17:51:56 by descamil          #+#    #+#             */
-/*   Updated: 2024/12/04 10:44:36 by descamil         ###   ########.fr       */
+/*   Updated: 2024/12/04 11:12:59 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_index_all(t_list **stack)
+static void	ft_index_all(t_list **stack)
 {
 	t_list	*temp;
 	t_list	*tempo;
@@ -36,7 +36,7 @@ void	ft_index_all(t_list **stack)
 	}
 }
 
-int	ft_number_bits(int size)
+static int	ft_number_bits(int size)
 {
 	int	i;
 
@@ -49,7 +49,7 @@ int	ft_number_bits(int size)
 	return (i);
 }
 
-void	ft_bits(t_list **stack_a, t_list **stack_b, int size)
+static void	ft_bits(t_list **stack_a, t_list **stack_b, int size)
 {
 	int	bits;
 	int	i;

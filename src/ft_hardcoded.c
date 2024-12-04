@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:29:59 by descamil          #+#    #+#             */
-/*   Updated: 2024/12/04 10:58:43 by descamil         ###   ########.fr       */
+/*   Updated: 2024/12/04 11:16:24 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_found_min(t_num *num, int size)
 	return (winner);
 }
 
-void	ft_three(t_list **stack_a, t_list **stack_b, t_num *num, int size)
+static void	ft_three(t_list **stack_a, t_list **stack_b, t_num *num, int size)
 {
 	ft_sethree(stack_a, num);
 	if (num->first > num->second && num->first > num->third)
@@ -60,7 +60,7 @@ void	ft_three(t_list **stack_a, t_list **stack_b, t_num *num, int size)
 	}
 }
 
-void	ft_move(t_list **stack_a, t_list **stack_b, int winner, int size)
+static void	ft_move(t_list **stack_a, t_list **stack_b, int winner, int size)
 {
 	if (winner == 2)
 		ft_swap(stack_a, "sa\n");

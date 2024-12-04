@@ -6,13 +6,13 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:00:12 by descamil          #+#    #+#             */
-/*   Updated: 2024/12/04 11:06:21 by descamil         ###   ########.fr       */
+/*   Updated: 2024/12/04 11:13:50 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_strlen_mod(const char *s, int i, char c)
+static int	ft_strlen_mod(const char *s, int i, char c)
 {
 	int	len;
 
@@ -27,7 +27,7 @@ int	ft_strlen_mod(const char *s, int i, char c)
 	return (len);
 }
 
-char	*ft_strlcpy_mod(char *s, char c, int *new_start, int size)
+static char	*ft_strlcpy_mod(char *s, char c, int *new_start, int size)
 {
 	char	*string;
 	int		start;
@@ -35,7 +35,7 @@ char	*ft_strlcpy_mod(char *s, char c, int *new_start, int size)
 
 	j = 0;
 	start = *new_start;
-	string = (char *)malloc(size + 1);
+	string = (char *)malloc((size_t)size + 1);
 	if (string == NULL)
 		return (NULL);
 	while (s[start] == c && s[start] != '\0')
@@ -47,7 +47,7 @@ char	*ft_strlcpy_mod(char *s, char c, int *new_start, int size)
 	return (string);
 }
 
-void	*free_memory(int a, char **arr)
+static void	*free_memory(int a, char **arr)
 {
 	int	f;
 
@@ -58,7 +58,7 @@ void	*free_memory(int a, char **arr)
 	return (NULL);
 }
 
-int	ft_words(const char *s, char c)
+static int	ft_words(const char *s, char c)
 {
 	int	word;
 	int	i;
@@ -88,7 +88,7 @@ char	**ft_split(const char *s, char c)
 	i = 0;
 	a = 0;
 	len = 0;
-	arr = (char **)malloc((ft_words(s, c) + 1) * sizeof(char *));
+	arr = (char **)malloc((size_t)(ft_words(s, c) + 1) * sizeof(char *));
 	if (arr == NULL)
 		return (NULL);
 	while (a < ft_words(s, c))

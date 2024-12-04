@@ -6,25 +6,25 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:44:01 by descamil          #+#    #+#             */
-/*   Updated: 2024/12/04 10:58:20 by descamil         ###   ########.fr       */
+/*   Updated: 2024/12/04 12:13:12 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_check_number(char *num)
+void	ft_check_number(t_list *stack_a, char ***num, int j)
 {
 	int		i;
 
 	i = 0;
-	if (num[i] == '+' || num[i] == '-')
+	if ((*num)[j][i] == '+' || (*num)[j][i] == '-')
 		i++;
-	if (num[i] == '\0')
-		ft_error();
-	while (num[i] != '\0')
+	if ((*num)[j][i] == '\0')
+		ft_exit(&stack_a, *num);
+	while ((*num)[j][i] != '\0')
 	{
-		if (ft_isdigit(num[i]) == 0)
-			ft_error();
+		if (ft_isdigit((*num)[j][i]) == 0)
+			ft_exit(&stack_a, *num);
 		i++;
 	}
 }
@@ -40,7 +40,10 @@ int	ft_duplicates(int number, t_list **stack_a)
 	while (current != NULL)
 	{
 		if (current->content == number)
+		{
+			ft_clear_stack(stack_a);
 			return (1);
+		}
 		current = current->next;
 	}
 	return (0);
@@ -61,14 +64,15 @@ void	ft_lstadd_back(t_list **stack_a, t_list *new)
 	current_list->next = new;
 }
 
-void	ft_new_node_number(int number, t_list **stack_a)
+int	ft_new_node_number(int number, t_list **stack_a)
 {
 	t_list	*new;
 
 	if (ft_duplicates(number, stack_a) == 1)
-		ft_error();
+		return (1);
 	new = ft_lstnew(number);
 	ft_lstadd_back(stack_a, new);
+	return (0);
 }
 
 void	ft_take_numbers(int argc, char **argv, t_list **stack_a)
@@ -82,20 +86,19 @@ void	ft_take_numbers(int argc, char **argv, t_list **stack_a)
 	while (i != argc)
 	{
 		j = 0;
-		arr = ft_split(argv[i], ' ');
-		if (arr[j] == NULL)
-			ft_error();
+		arr = ft_split(argv[i++], ' ');
+		if (arr == NULL || arr[0] == NULL)
+			ft_exit(stack_a, arr);
 		while (arr[j] != NULL)
 		{
-			ft_check_number(arr[j]);
+			ft_check_number((*stack_a), &arr, j);
 			number = ft_atol(arr[j]);
 			if (number == (long) INT_MAX + 1)
-				ft_error();
-			ft_new_node_number(number, stack_a);
-			free(arr[j]);
+				ft_exit(stack_a, arr);
+			if (ft_new_node_number((int) number, stack_a) == 1)
+				ft_exit(stack_a, arr);
 			j++;
 		}
-		free(arr);
-		i++;
+		ft_free_split(arr);
 	}
 }

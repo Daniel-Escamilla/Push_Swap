@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 12:50:13 by descamil          #+#    #+#             */
-/*   Updated: 2024/12/04 10:44:22 by descamil         ###   ########.fr       */
+/*   Updated: 2024/12/04 11:52:34 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,14 @@ int	ft_lstsize(t_list *lst)
 		lst = lst->next;
 	}
 	return (count);
+}
+
+void	ft_free_split(char **num)
+{
+	int	j;
+
+	j = 0;
+	while (num[j])
+		free(num[j++]);
+	free(num);
 }

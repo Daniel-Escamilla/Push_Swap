@@ -6,11 +6,18 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:32:11 by descamil          #+#    #+#             */
-/*   Updated: 2024/12/04 11:02:31 by descamil         ###   ########.fr       */
+/*   Updated: 2024/12/04 11:58:43 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	ft_exit(t_list **stack_a, char **arr)
+{
+	ft_clear_stack(stack_a);
+	ft_free_split(arr);
+	ft_error();
+}
 
 int	ft_isdigit(int c)
 {
