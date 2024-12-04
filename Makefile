@@ -1,12 +1,12 @@
-SOURCE_FILES =	ft_main.c \
-				ft_radix.c \
-				ft_split.c \
-				ft_moves.c \
-				ft_push_swap.c \
-				ft_functions.c \
-				ft_hardcoded.c \
-				ft_functions2.c \
-				ft_hardcoded2.c \
+SOURCE_FILES =	src/ft_main.c \
+				src/ft_radix.c \
+				src/ft_split.c \
+				src/ft_moves.c \
+				src/ft_push_swap.c \
+				src/ft_functions.c \
+				src/ft_hardcoded.c \
+				src/ft_functions2.c \
+				src/ft_hardcoded2.c \
 
 NAME = push_swap
 
@@ -18,7 +18,7 @@ OBJECTS = $(addprefix push_swap_objects/, $(SOURCE_FILES:.c=.o))
 all: $(NAME)
 
 push_swap_objects/%.o: %.c
-	@mkdir -p push_swap_objects
+	@mkdir -p push_swap_objects/src
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo $(CC) $(CFLAGS) $<
 

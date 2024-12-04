@@ -6,18 +6,18 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:29:59 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/03 18:21:11 by descamil         ###   ########.fr       */
+/*   Updated: 2024/12/04 10:58:43 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_found_min(t_num *num, int size)
 {
-	int	i;
-	int	temp;
 	int	winner;
 	int	value;
+	int	temp;
+	int	i;
 
 	i = 1;
 	winner = 1;

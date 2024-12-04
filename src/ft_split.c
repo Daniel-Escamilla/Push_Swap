@@ -6,11 +6,11 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:00:12 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/03 16:56:13 by descamil         ###   ########.fr       */
+/*   Updated: 2024/12/04 11:06:21 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_strlen_mod(const char *s, int i, char c)
 {
@@ -29,22 +29,22 @@ int	ft_strlen_mod(const char *s, int i, char c)
 
 char	*ft_strlcpy_mod(char *s, char c, int *new_start, int size)
 {
-	char	*ptr;
-	int		j;
+	char	*string;
 	int		start;
+	int		j;
 
 	j = 0;
 	start = *new_start;
-	ptr = (char *)malloc(size + 1);
-	if (ptr == NULL)
+	string = (char *)malloc(size + 1);
+	if (string == NULL)
 		return (NULL);
 	while (s[start] == c && s[start] != '\0')
 		start++;
 	while (s[start] != '\0' && j < size)
-		ptr[j++] = s[start++];
-	ptr[j] = '\0';
+		string[j++] = s[start++];
+	string[j] = '\0';
 	*new_start = start;
-	return (ptr);
+	return (string);
 }
 
 void	*free_memory(int a, char **arr)
@@ -53,10 +53,7 @@ void	*free_memory(int a, char **arr)
 
 	f = 0;
 	while (f < a)
-	{
-		free(arr[f]);
-		f++;
-	}
+		free(arr[f++]);
 	free(arr);
 	return (NULL);
 }
@@ -82,22 +79,22 @@ int	ft_words(const char *s, char c)
 
 char	**ft_split(const char *s, char c)
 {
+	char	*cpy_mod;
+	char	**arr;
+	int		len;
 	int		i;
 	int		a;
-	int		len_mod;
-	char	**arr;
-	char	*cpy_mod;
 
 	i = 0;
 	a = 0;
-	len_mod = 0;
+	len = 0;
 	arr = (char **)malloc((ft_words(s, c) + 1) * sizeof(char *));
 	if (arr == NULL)
 		return (NULL);
 	while (a < ft_words(s, c))
 	{
-		len_mod = ft_strlen_mod(s, i, c);
-		cpy_mod = ft_strlcpy_mod((char *)s, c, &i, len_mod);
+		len = ft_strlen_mod(s, i, c);
+		cpy_mod = ft_strlcpy_mod((char *)s, c, &i, len);
 		if (cpy_mod == NULL)
 			return (free_memory(a, arr));
 		arr[a] = cpy_mod;

@@ -6,11 +6,11 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:32:11 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/03 18:27:28 by descamil         ###   ########.fr       */
+/*   Updated: 2024/12/04 11:02:31 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_isdigit(int c)
 {
@@ -33,18 +33,18 @@ t_list	*ft_lstnew(int content)
 
 long	ft_atol(const char *str)
 {
-	int		i;
-	long	m;
 	long	number;
+	long	sign;
+	int		i;
 
-	m = 1;
 	i = 0;
+	sign = 1;
 	number = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
 		i++;
 	if (str[i] == '-')
 	{
-		m = -1;
+		sign = -1;
 		i++;
 	}
 	else if (str[i] == '+')
@@ -52,10 +52,10 @@ long	ft_atol(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		number = number * 10 + (str[i++] - '0');
-		if ((number * m) < INT_MIN || (number * m) > INT_MAX)
+		if ((number * sign) < INT_MIN || (number * sign) > INT_MAX)
 			return ((long) INT_MAX + 1);
 	}
-	return (number * m);
+	return (number * sign);
 }
 
 int	ft_lstordered(t_list **stack)

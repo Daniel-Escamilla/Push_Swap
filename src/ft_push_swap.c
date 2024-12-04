@@ -6,11 +6,11 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:44:01 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/03 18:33:22 by descamil         ###   ########.fr       */
+/*   Updated: 2024/12/04 10:58:20 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_check_number(char *num)
 {
@@ -73,10 +73,10 @@ void	ft_new_node_number(int number, t_list **stack_a)
 
 void	ft_take_numbers(int argc, char **argv, t_list **stack_a)
 {
+	long	number;
+	char	**arr;
 	int		i;
 	int		j;
-	char	**arr;
-	long	number;
 
 	i = 1;
 	while (i != argc)

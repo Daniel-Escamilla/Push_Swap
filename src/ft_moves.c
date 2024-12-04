@@ -6,11 +6,11 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 13:55:24 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/04 16:45:03 by descamil         ###   ########.fr       */
+/*   Updated: 2024/12/04 10:44:32 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_swap(t_list	**stack, char *str)
 {

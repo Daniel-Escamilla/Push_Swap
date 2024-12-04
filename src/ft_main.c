@@ -6,11 +6,11 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 17:06:08 by descamil          #+#    #+#             */
-/*   Updated: 2024/02/04 17:36:59 by descamil         ###   ########.fr       */
+/*   Updated: 2024/12/04 10:59:34 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_error(void)
 {
